@@ -1,0 +1,184 @@
+/* Navigation */
+.sidebar
+{    
+    grid-column: span 1;
+    background: var(--color-sidebar);
+    width: var(--sb-width);
+    padding: 0.2rem 2rem 0rem 0rem;
+    height: 95vh;
+    position: sticky;
+    align-self: start;
+    top: 5vh;
+    text-wrap: nowrap;
+
+    a
+    {
+        display: flex;
+        align-items: center;
+        gap: 0.7rem;
+        padding: 0.7rem 0.7rem;
+        border-radius: 0.5rem;
+        font-size: 16pt;
+        text-decoration: none;
+        color: var(--color-accent);
+    }
+
+    a.active-page,
+    a:hover,
+    a:focus-visible 
+    {
+        color: var(--color-sidebar);
+        background-color: var(--color-accent);
+    }
+
+    ul 
+    {
+        height: 100%;
+        cursor: pointer;
+        list-style-type: none;
+        display: flex;
+        flex-flow: column;
+        gap: 0.25rem;
+    }
+
+    /* Seperate out the first child to act as a collapse icon */
+    ul:not(.sub-menu) > li:first-child
+    {
+        margin-bottom: 3rem;
+    }
+
+    /* Seperate out the last child to act as a dark mode toggle */
+    ul:not(.sub-menu) > li:last-child
+    {
+        margin-top: auto;
+        padding-bottom: 2rem;
+    }
+
+    /* Sidebar dropdowns */
+    .sub-menu 
+    {
+        display: grid;
+        grid-template-rows: 0fr;
+        transition: 0.3s ease;
+        padding-left: 3rem;
+
+        > div 
+        {
+            overflow: hidden;
+        }
+        a
+        {
+            font-weight: normal;
+        }
+    }
+
+    .sub-menu.show-submenu
+    {
+        grid-template-rows: 1fr;
+    }
+}
+
+.rotate
+{
+    rotate: 90deg;
+}
+
+/* ================================================= */
+
+/* Button */
+#theme-toggle, #toggle-sidebar
+{
+    font-weight: normal;
+}
+
+/* ================================================= */
+
+/* Update elements when sidebar is collapsed */
+:not(body.sb-collapsed) 
+{
+    .sidebar a span,
+    .sidebar a span + i
+    {
+        flex-grow: 1;
+        opacity: 1;
+        visibility: visible;
+        transition:
+            rotate 0.2s ease,
+            opacity 0.2s ease,
+            visibility 0.2s ease;
+    }
+}
+
+body.sb-collapsed 
+{
+    .sidebar a span,
+    .sidebar a span + i
+    {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    aside .fa-angle-double-left 
+    {
+        rotate: 180deg;
+    }
+}
+
+aside .fa-angle-double-left
+{
+    transition: 
+        rotate 0.2s ease;
+}
+
+/* ================================================= */
+
+/* Message styling */
+.msg:before 
+{
+    font-family: 'Font Awesome 7 Free';
+}
+
+.msg
+{
+    width: fit-content;
+    height: auto;
+    margin: 0 auto 0.5rem 0;
+    font: 800 1.5rem/1em var(--ff);
+    display: flex;
+    flex-flow: row;
+    padding: 1rem;
+    gap: 1rem;
+
+    border-radius: 1rem;
+}
+
+/* Message types */
+
+#info:before    {content: '\f05a';}
+#success:before {content: '\f00c';}
+#warning:before {content: '\f071';}
+#error:before   {content: '\f057';}
+
+#info
+{
+    color: var(--color-info);
+    background: var(--background-info);
+}
+
+#success 
+{
+    color: var(--color-success);
+    background: var(--background-success);
+}
+
+#warning 
+{
+    color: var(--color-warning);
+    background: var(--background-warning);
+}
+
+#error 
+{
+    color: var(--color-error);
+    background: var(--background-error);
+}

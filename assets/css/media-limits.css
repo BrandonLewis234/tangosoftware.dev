@@ -1,0 +1,185 @@
+/* Screen size controls */
+
+/* Small Size Devices */
+@media only screen and (max-width: 600px) 
+{    
+    main
+    {
+        grid-column: span 3;
+        align-items: center;
+        margin-right: 0.5rem;
+    }
+    .grid-container
+    { 
+        grid-template-rows: auto auto 1fr;
+    }
+    header,
+    footer,
+    .sidebar
+    {
+        grid-column: span 3;
+        transition:
+            width 0s ease;
+    }
+
+    :not(body.sb-collapsed)
+    {
+        .sidebar
+        {
+            width: 100%;
+            height: 100%;
+
+            ul
+            {
+                flex-flow: column;
+            }
+        }
+        aside .fa-angle-double-left 
+        {
+            rotate: 90deg;
+        }
+        main
+        {
+            display: none;
+        }
+    }
+
+    body:not(body.sb-collapsed)
+    {
+        background: var(--color-sidebar);
+    }
+
+    body.sb-collapsed
+    {
+        background: var(--color-primary);
+
+        .sidebar
+        {
+            width: 95vw;
+            height: var(--sb-width);
+            overflow-y: hidden;
+            overflow-x: auto;
+            
+            a span, 
+            a span + i,
+            .sub-menu:not(.show-submenu)
+            {
+                display: none;
+                visibility: collapse;
+                height: 0;
+                width: 0;
+            }
+
+            .sub-menu.show-submenu 
+            {
+                background: var(--color-sidebar);
+                position: fixed;
+                visibility: visible;
+                top: 8rem;
+                height: auto;
+                width: 100%;
+                left: 0;
+                display: flex;
+                justify-content: center;
+                padding: 0.5rem 0rem;
+                transition: none;
+
+                > div
+                {
+                    overflow-x: auto;
+                }
+
+                li 
+                {
+                    display: inline-flex;
+                }
+            }
+
+            ul
+            {
+                flex-flow: row;
+                gap: 0.6rem;
+            }  
+            li:last-child
+            {
+                right: 0;
+                margin-top: 0;
+            } 
+        }
+        aside .fa-angle-double-left 
+        {
+            rotate: 270deg;
+        }
+        main
+        {
+            display: block;
+        }  
+    }
+}
+
+/* Medium Size Devices */
+@media only screen and (min-width: 600px)
+{ 
+
+    :not(body.sb-collapsed)
+    {
+        main
+        {
+            margin-left: -12rem;
+            z-index: 0;
+
+            transition:
+                margin-left 0.3s ease;
+        }
+
+        .sidebar 
+        {
+            float: left;
+            z-index: 1;
+        }
+    }
+
+    body.sb-collapsed
+    {
+        background: var(--color-primary);
+
+        main
+        {
+            margin-left: 0rem;
+        }  
+
+    }  
+}
+
+/* Extra Large Devices */
+@media only screen and (min-width: 1200px)
+{
+    header,
+    footer,
+    .sidebar
+    {
+        transition: 
+            width 0.3s ease,
+            height 0.3s ease;        
+    }
+
+    body:not(body.sb-collapsed)
+    {
+        background: var(--color-primary);
+
+        main
+        {
+            margin-left: 0rem;
+        }
+    }
+
+    body.sb-collapsed
+    {
+        background: var(--color-primary);
+
+        main
+        {
+            margin-left: 0rem;
+        }  
+    }  
+}
