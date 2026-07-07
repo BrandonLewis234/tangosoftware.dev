@@ -9,8 +9,8 @@ class templateHeader extends HTMLElement
         this.innerHTML = 
         `
             <div>
-                <a href="https://brandon-lewis.dev"><img src="../favicon.ico"></img></a>
-                <h1>Brandon Lewis' Project Repository</h1>
+                <a href="https://tangosoftware.dev"><img src="../favicon.ico"></img></a>
+                <h1>Tango's Project Repository</h1>
             </div>
         `
     }
