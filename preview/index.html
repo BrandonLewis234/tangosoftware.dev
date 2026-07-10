@@ -19,18 +19,101 @@
 </head>
 
 <body class="container preload">
-    <div class="grid-container">
+    <div class="grid main-container">
         <template-header></template-header>
         
         <template-sidebar data-collapse-sidebar></template-sidebar>
 
         <main>
-            <div style="padding-top: 2rem;">
-                <div class="msg" id="info">info example</div>
-                <div class="msg" id="success">success example</div>
-                <div class="msg" id="warning">warning example</div>
-                <div class="msg" id="error">error example</div>
-            </div>
+            <section class="grid column-container">
+                <div>
+                    <h1>Message Styles</h1>
+                    <div class="msg" id="info">info example</div>
+                    <div class="msg" id="success">success example</div>
+                    <div class="msg" id="warning">warning example</div>
+                    <div class="msg" id="error">error example</div>
+                </div>
+                <div>
+                    <h1>Grid Layout</h1>
+                    <div class="grid column-connected-container">
+                        <div>
+                            <h2>Column 1</h2>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. 
+                                In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. 
+                            </p>
+                        </div>
+                        <div>
+                            <h2>Column 2</h2>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. 
+                                In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. 
+                            </p>
+                        </div>
+                        <div>
+                            <h2>Column 3</h2>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. 
+                                In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. 
+                            </p>
+                        </div>
+                        <div>
+                            <h2>Column 4</h2>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. 
+                                In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. 
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <h1>Project Preview</h1>
+                <div class="grid column-container">
+                    <article>
+                        <div class="grid project">
+                            <a class="image" href="#">
+                                <img src="../images/pic01.jpg">
+                            </a>
+                            <h2>Project Name</h2>
+                            <p>
+                                Project details
+                                Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. 
+                                In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor.                                                
+                            </p>
+                        </div>
+                        <a class="button read-more" href="#">Read more</a>
+                    </article>
+                    <article>
+                        <div class="grid project">
+                            <a class="image" href="#">
+                                <img src="../images/pic01.jpg">
+                            </a>
+                            <h2>Project Name</h2>
+                            <p>
+                                Project details
+                                Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. 
+                                In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor.                                                
+                            </p>
+                        </div>
+                        <a class="button read-more" href="#">Read more</a>
+                    </article>
+                    <article>
+                        <div class="grid project">
+                            <a class="image" href="#">
+                                <img src="../images/pic01.jpg">
+                            </a>
+                            <h2>Project Name</h2>
+                            <p>
+                                Project details
+                                Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. 
+                                In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor.                                                
+                            </p>
+                        </div>
+                        <a class="button read-more" href="#">Read more</a>
+                    </article>
+                </div>
+            </section>
         </main>
 
         <template-footer></template-footer>

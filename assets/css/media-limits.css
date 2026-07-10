@@ -9,7 +9,7 @@
         align-items: center;
         margin-right: 0.5rem;
     }
-    .grid-container
+    .grid-main-container
     { 
         grid-template-rows: auto auto 1fr;
     }

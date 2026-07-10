@@ -85,10 +85,93 @@
 
 /* ================================================= */
 
-/* Button */
-#theme-toggle, #toggle-sidebar
+/* Buttons */
+.button, #theme-toggle, #toggle-sidebar
 {
     font-weight: normal;
+}
+
+.button 
+{
+    display: flex;
+    background-color: var(--color-sidebar);
+    color: var(--color-secondary);
+    border: 1px solid var(--color-tertiary);
+    border-radius: 0.5em;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none; 
+    cursor: pointer;   
+}
+.button:hover
+{
+    color: var(--color-primary);
+    background-color: var(--color-tertiary);
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+/* ================================================= */
+
+/* Project Preview */
+
+article 
+{
+    display: flex;
+    border: 1px solid var(--color-tertiary);
+    border-radius: 1em;
+    margin: 20px 10px;
+    padding: 1em;
+
+    > div 
+    {
+        grid-auto-flow: column;
+        grid-template-columns: 30fr 70fr;
+    }
+}
+
+article div h2
+{
+    grid-row: span 1;
+    grid-column: span 1;
+    padding-top: 0.5em;
+    margin: 0;
+}
+
+article div p
+{
+    grid-row: span 1;
+    grid-column: span 1;
+}
+
+/* Images */
+
+article div a.image 
+{
+    grid-row: span 2;
+    grid-column: span 1;
+}
+
+a.image 
+{
+    overflow: hidden;
+    margin: 0.5em;
+    border: 0;
+}
+
+a.image img
+{
+    width: 10em;
+    transition: transform 0.2s ease;
+}
+
+/* Read more button */
+.read-more
+{
+    position: absolute;
+    align-self: flex-end;
+    margin: 0em 0em 2em 0.75em;
+    width: 8em;
+    height: 2.5em;
 }
 
 /* ================================================= */

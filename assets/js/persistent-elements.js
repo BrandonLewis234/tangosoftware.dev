@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function()
     document.addEventListener('click', function(e) 
     {
         const isLink = e.target.tagName === 'A' || e.target.closest('a');
-        if (!(document.querySelector(".sidebar").contains(e.target)) && !(element.classList.contains("sb-collapsed")) && !(isLink))
+        if (!(document.querySelector(".sidebar").contains(e.target)) && !(element.classList.contains("sb-collapsed")) && !(isLink) && screenIsSmall())
         {
             toggleSidebar(e);
         }

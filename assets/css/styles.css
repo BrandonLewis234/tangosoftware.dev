@@ -19,7 +19,7 @@
     --hue: 0;
     --color-primary: hsl(259, 50%, 10%);
     --color-secondary: hsl(259, 50%, 90%);
-    --color-tertiary: hsl(319, 80%, 80%);
+    --color-tertiary: hsl(264, 64%, 74%);
     --color-accent: hsl(125, 80%, 80%);
     --color-sidebar: hsl(259, 50%, 15%);
     --color-header-footer: hsl(260, 67%, 16%);
@@ -43,9 +43,9 @@
 {
     --color-primary: hsl(259, 50%, 90%);
     --color-secondary: hsl(259, 50%, 15%);
-    --color-tertiary: hsl(319, 80%, 20%);
-    --color-accent: hsl(145, 30%, 74%);
-    --color-sidebar: hsl(264, 64%, 74%);
+    --color-tertiary: hsl(264, 34%, 57%);
+    --color-accent: hsl(182, 42%, 43%);
+    --color-sidebar: hsl(264, 41%, 83%);
     --color-header-footer: hsl(263, 82%, 89%);
 }
 
@@ -70,12 +70,55 @@ body
     margin: 0;
 }
 
-.grid-container
+/* Grid class to be used alongside grid layouts*/
+.grid
 {
     display: grid;
+}
+
+/* Grid layouts */
+.main-container
+{
     min-height: 100vh;
     grid-template-rows: auto 1fr auto;
     grid-template-columns: auto 1fr auto;
+}
+
+.column-container
+{
+    grid-auto-flow: column;
+    grid-auto-rows: 0fr;
+
+    > div 
+    {
+        border: 1px solid var(--color-accent);
+        border-radius: 1em;
+        margin: 20px 10px;
+        padding: 0 1em 1em;
+    }
+}
+
+.column-connected-container
+{
+    grid-auto-flow: column;
+    grid-auto-rows: 0fr;
+    margin: 20px 10px;
+
+    > div 
+    {
+        border: solid var(--color-tertiary);
+        border-width: 1px 0px 1px 1px;
+        padding: 0 1em;
+    }
+    > div:first-child
+    {
+        border-radius: 1em 0em 0em 1em;
+    }
+    > div:last-child
+    {
+        border-radius: 0em 1em 1em 0em;
+        border-width: 1px;
+    }
 }
 
 /* Header and Footer */
@@ -132,12 +175,12 @@ main
     display: block;
     width: auto;
 
-    > div
+    > div:not(.grid), section:not(.grid)
     {
         border: 1px solid var(--color-accent);
         border-radius: 1em;
         margin: 20px 10px;
-        padding: 1em;
+        padding: 0 1em 1em;
     }
 }
 
