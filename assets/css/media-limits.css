@@ -9,10 +9,39 @@
         align-items: center;
         margin-right: 0.5rem;
     }
-    .grid-main-container
+
+    .grid.main-container
     { 
         grid-template-rows: auto auto 1fr;
     }
+    .grid.column-container
+    {
+        grid-auto-flow: row;
+    }
+    .grid.column-connected-container
+    {
+        grid-auto-flow: row;
+        
+
+        > div 
+        {
+            border: solid var(--color-tertiary);
+            border-width: 1px 1px 0px 1px;
+            padding: 0 1em;
+        }
+
+        > div:first-child
+        {
+            border-radius: 1em 1em 0em 0em;
+        }
+
+        > div:last-child
+        {
+            border-radius: 0em 0em 1em 1em;
+            border-width: 1px;
+        }
+    }
+
     header,
     footer,
     .sidebar
@@ -120,6 +149,34 @@
 /* Medium Size Devices */
 @media only screen and (min-width: 600px)
 { 
+    
+    .grid.column-container
+    {
+        grid-auto-flow: row;
+    }
+    .grid.column-connected-container
+    {
+        grid-auto-flow: row;
+        
+
+        > div 
+        {
+            border: solid var(--color-tertiary);
+            border-width: 1px 1px 0px 1px;
+            padding: 0 1em;
+        }
+
+        > div:first-child
+        {
+            border-radius: 1em 1em 0em 0em;
+        }
+
+        > div:last-child
+        {
+            border-radius: 0em 0em 1em 1em;
+            border-width: 1px;
+        }
+    }
 
     :not(body.sb-collapsed)
     {
@@ -163,6 +220,32 @@
             height 0.3s ease;        
     }
 
+    .grid.column-container
+    {
+        grid-auto-flow: column;
+    }
+    .grid.column-connected-container
+    {
+        grid-auto-flow: column;
+        
+
+        > div 
+        {
+            border: solid var(--color-tertiary);
+            border-width: 1px 0px 1px 1px;
+            padding: 0 1em;
+        }
+        > div:first-child
+        {
+            border-radius: 1em 0em 0em 1em;
+        }
+        > div:last-child
+        {
+            border-radius: 0em 1em 1em 0em;
+            border-width: 1px;
+        }
+    }
+    
     body:not(body.sb-collapsed)
     {
         background: var(--color-primary);
