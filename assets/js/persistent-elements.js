@@ -148,3 +148,25 @@ window.addEventListener("resize", function(){
         closeAllSubMenus();
     }
 });
+
+// =============
+// Scroll to top
+// =============
+
+window.addEventListener("scroll", function()
+{
+    scrollToTop = document.getElementById("scroll-to-top");
+
+    if (window.scrollY >= 40)
+    {
+        scrollToTop.style.visibility = "visible";
+        scrollToTop.style.opacity = "1";
+        scrollToTop.style.right = "1em";
+    }
+    else
+    {
+        scrollToTop.style.visibility = "hidden";
+        scrollToTop.style.opacity = "0";
+        scrollToTop.style.right = "-5em";
+    }
+});

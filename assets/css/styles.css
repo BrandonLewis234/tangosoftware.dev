@@ -36,6 +36,9 @@
     --color-error: hsl(357, 100%, 42%);
     --background-error: hsl(0, 100%, 86%);
 
+    --color-tooltip: hsl(207, 100%, 30%);
+    --background-tooltip: hsl(195, 100%, 87%);  
+
     --sb-width: 18rem;
 }
 
@@ -47,6 +50,13 @@
     --color-accent: hsl(182, 42%, 43%);
     --color-sidebar: hsl(264, 41%, 83%);
     --color-header-footer: hsl(263, 82%, 89%);
+    --color-tooltip: hsl(207, 100%, 30%);
+    --background-tooltip: hsl(195, 100%, 87%); 
+}
+
+html
+{
+    scroll-behavior: smooth;
 }
 
 /* Set transition times for most of the site */
@@ -58,7 +68,7 @@ template-footer,
     transition:
         width 0.3s ease,
         height 0.3s ease,
-        visibility 0.2s ease;
+        visibility 0.2s ease,
 }
 
 body 

@@ -209,6 +209,12 @@
         {
             float: left;
             z-index: 1;
+        
+            transition:
+                width 0.3s ease,
+                height 0.3s ease,
+                visibility 0.2s ease;
+        
         }
     }
 

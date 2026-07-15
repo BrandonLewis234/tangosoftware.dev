@@ -86,6 +86,10 @@ class templateFooter extends HTMLElement
     {
         this.innerHTML = 
         `
+            <a href="#" id="scroll-to-top" class="tooltip-left">
+                <span class="tooltip-text">scroll to top</span>
+                <i class="fa fa-arrow-up"></i>
+            </a>
             <h1>Footer</h1>
         `
     }

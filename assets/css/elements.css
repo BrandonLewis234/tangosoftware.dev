@@ -85,6 +85,98 @@
 
 /* ================================================= */
 
+/* tooltips */
+.tooltip .tooltip-left
+{
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted var(--color-tooltip);
+}
+
+.tooltip .tooltip-text, 
+.tooltip-left .tooltip-text 
+{
+    width: 120px;
+    background-color: var(--background-tooltip);
+    color: var(--color-tooltip);
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip .tooltip-text
+{
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px;
+}
+
+.tooltip-left .tooltip-text
+{
+    right: 2.25em;
+    margin-top: -0.25em;
+}
+
+.tooltip .tooltip-text::after,
+.tooltip-left .tooltip-text::after 
+{
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+}
+
+.tooltip .tooltip-text::after
+{
+    border-width: 5px;
+    border-style: solid;
+    border-color: var(--background-tooltip) transparent transparent transparent;
+}
+
+.tooltip-left .tooltip-text::after
+{
+    margin-left: 3.7em;
+    top: 0.5em;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent transparent var(--background-tooltip);
+}
+
+.tooltip:hover .tooltip-text,
+.tooltip-left:hover .tooltip-text 
+{
+    opacity: 1;
+    transition-delay: 1.5s;
+}
+
+/* ================================================= */
+
+/* scroll to top */
+#scroll-to-top
+{    
+    position: fixed; 
+    opacity: 0;
+
+    background-color: var(--color-tertiary);
+    border: 0.5em solid var(--color-tertiary);
+    border-radius: 0.25em;
+    color: var(--color-primary);
+    right: -5em;
+    top: 90%;
+
+    transition: 
+        visibility 0.3s,
+        opacity 0.6s ease,
+        right 0.5s ease-out;
+
+}
+
+/* ================================================= */
+
 /* Buttons */
 .button, #theme-toggle, #toggle-sidebar
 {
