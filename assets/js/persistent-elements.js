@@ -22,9 +22,22 @@ window.addEventListener("load", function ()
 // Sidebar
 // =============
 
+SMALL_WIDTH = 600;
+LARGE_WIDTH = 1200;
+
 function screenIsSmall()
 {
-    return window.innerWidth <= 1200;
+    return window.innerWidth <= SMALL_WIDTH;
+}
+
+function screenIsMedium()
+{
+    return window.innerWidth > SMALL_WIDTH < LARGE_WIDTH
+}
+
+function screenIsLarge()
+{
+    return window.innerWidth >= LARGE_WIDTH;
 }
 
 function toggleSidebar(e)
@@ -37,10 +50,7 @@ function toggleSidebar(e)
 
     if(isExpanded)
     {
-        Array.from(document.getElementsByClassName("show-submenu")).forEach(element => {
-            element.classList.remove("show-submenu");
-            element.previousElementSibling.querySelector('i:last-child').classList.toggle('rotate');
-        });
+        closeAllSubMenus();
     }
 }
 
@@ -71,7 +81,11 @@ document.addEventListener('DOMContentLoaded', function()
     document.addEventListener('click', function(e) 
     {
         const isLink = e.target.tagName === 'A' || e.target.closest('a');
-        if (!(document.querySelector(".sidebar").contains(e.target)) && !(element.classList.contains("sb-collapsed")) && !(isLink) && screenIsSmall())
+        if (!(document.querySelector(".sidebar").contains(e.target)) && screenIsSmall())
+        {
+            closeAllSubMenus();
+        }
+        if (!(document.querySelector(".sidebar").contains(e.target)) && !(element.classList.contains("sb-collapsed")) && !(isLink) && !(screenIsLarge()))
         {
             toggleSidebar(e);
         }
@@ -111,3 +125,26 @@ function toggleSubMenu(element)
         toggleSidebar();
     }
 }
+
+function closeAllSubMenus()
+{
+    element = document.body;
+    Array.from(document.getElementsByClassName("show-submenu")).forEach(element => {
+        element.classList.remove("show-submenu");
+        element.previousElementSibling.querySelector('i:last-child').classList.toggle('rotate');
+    });
+}
+
+window.addEventListener("scroll", function(){
+    if (screenIsSmall())
+    {
+        closeAllSubMenus();
+    }
+});
+
+window.addEventListener("resize", function(){
+    if ((document.body.classList.contains("sb-collapsed")) && screenIsMedium())
+    {
+        closeAllSubMenus();
+    }
+});

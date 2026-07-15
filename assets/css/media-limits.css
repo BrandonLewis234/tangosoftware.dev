@@ -10,6 +10,11 @@
         margin-right: 0.5rem;
     }
 
+    body
+    {
+        overflow-x: hidden;
+    }
+
     .grid.main-container
     { 
         grid-template-rows: auto auto 1fr;
@@ -98,7 +103,8 @@
                 height: 0;
                 width: 0;
             }
-
+            
+            /* submenu styling */
             .sub-menu.show-submenu 
             {
                 background: var(--color-sidebar);
@@ -121,6 +127,11 @@
                 li 
                 {
                     display: inline-flex;
+                }
+
+                a
+                {
+                    width: auto;
                 }
             }
 
@@ -150,6 +161,11 @@
 @media only screen and (min-width: 600px)
 { 
     
+    body
+    {
+        overflow-x: auto;
+    }
+
     .grid.column-container
     {
         grid-auto-flow: row;
@@ -210,7 +226,12 @@
 
 /* Extra Large Devices */
 @media only screen and (min-width: 1200px)
-{
+{    
+    body
+    {
+        overflow-x: auto;
+    }
+
     header,
     footer,
     .sidebar
