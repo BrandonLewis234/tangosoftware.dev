@@ -114,64 +114,65 @@
 
 /* Project Preview */
 
-article 
+article.project
 {
     display: flex;
+
     border: 1px solid var(--color-tertiary);
     border-radius: 1em;
     margin: 20px 10px;
     padding: 1em;
 
-    > div 
+    > div.image-column
     {
-        grid-auto-flow: column;
-        grid-template-columns: 30fr 70fr;
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+
+        /* Image preview */
+        > a.image
+        {            
+            overflow: hidden;
+            margin: 0.5em;
+            border: 0;
+
+            > img
+            {
+                width: 10em;
+                padding: 0.5em;
+                transition: transform 0.2s ease;
+            }
+        }
+
+        /* Read more button */
+        > a.button.read-more
+        {          
+            width: 8em;
+            height: 2.5em;
+        }
     }
-}
 
-article div h2
-{
-    grid-row: span 1;
-    grid-column: span 1;
-    padding-top: 0.5em;
-    margin: 0;
-}
+    > div.detail-column 
+    {
+        display: flex;
+        flex-flow: column;
 
-article div p
-{
-    grid-row: span 1;
-    grid-column: span 1;
-}
-
-/* Images */
-
-article div a.image 
-{
-    grid-row: span 2;
-    grid-column: span 1;
-}
-
-a.image 
-{
-    overflow: hidden;
-    margin: 0.5em;
-    border: 0;
-}
-
-a.image img
-{
-    width: 10em;
-    transition: transform 0.2s ease;
-}
-
-/* Read more button */
-.read-more
-{
-    position: absolute;
-    align-self: flex-end;
-    margin: 0em 0em 2em 0.75em;
-    width: 8em;
-    height: 2.5em;
+        /* Project title */
+        > h2
+        {
+            padding-top: 0.5em;
+            margin: 0;
+        }
+        /* Project summary */
+        > p 
+        {
+            background-color: var(--color-sidebar);
+            border-radius: 0.25em;
+            padding: 0.5em;
+            max-height: 6.5rem;
+            overflow: auto;
+        }
+    }
 }
 
 /* ================================================= */
