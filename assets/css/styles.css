@@ -196,12 +196,6 @@ main
     }
 }
 
-body.sb-collapsed 
-{
-    --sb-width: 5rem;
-    --sb-adjustment: var(--sb-min-adjustment);
-}
-
 a
 {
     font: 800 1rem/1em var(--ff);

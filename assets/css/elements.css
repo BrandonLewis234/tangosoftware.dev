@@ -4,7 +4,7 @@
     grid-column: span 1;
     background: var(--color-sidebar);
     width: var(--sb-width);
-    padding: 0.2rem 2rem 0rem 0rem;
+    padding: 0.2rem 1.3rem 0rem 0rem;
     height: 95vh;
     position: sticky;
     align-self: start;
