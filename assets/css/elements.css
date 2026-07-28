@@ -16,7 +16,8 @@
         display: flex;
         align-items: center;
         gap: 0.7rem;
-        padding: 0.7rem 0.7rem;
+        padding: 0.7rem;
+        margin-right: 0.7rem;
         border-radius: 0.5rem;
         font-size: 16pt;
         text-decoration: none;
@@ -76,6 +77,46 @@
     {
         grid-template-rows: 1fr;
     }
+}
+
+/* Update elements when sidebar is collapsed */
+:not(body.sb-collapsed) 
+{
+    .sidebar a span,
+    .sidebar a span + i
+    {
+        flex-grow: 1;
+        opacity: 1;
+        visibility: visible;
+        transition:
+            rotate 0.2s ease,
+            opacity 0.2s ease,
+            visibility 0.2s ease;
+    }
+}
+
+body.sb-collapsed 
+{    
+    --sb-width: 6rem;
+    --sb-adjustment: var(--sb-min-adjustment);
+
+    .sidebar a span,
+    .sidebar a span + i
+    {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    aside .fa-angle-double-left 
+    {
+        rotate: 180deg;
+    }
+}
+
+aside .fa-angle-double-left
+{
+    transition: 
+        rotate 0.2s ease;
 }
 
 .rotate
@@ -265,45 +306,6 @@ article.project
             overflow: auto;
         }
     }
-}
-
-/* ================================================= */
-
-/* Update elements when sidebar is collapsed */
-:not(body.sb-collapsed) 
-{
-    .sidebar a span,
-    .sidebar a span + i
-    {
-        flex-grow: 1;
-        opacity: 1;
-        visibility: visible;
-        transition:
-            rotate 0.2s ease,
-            opacity 0.2s ease,
-            visibility 0.2s ease;
-    }
-}
-
-body.sb-collapsed 
-{
-    .sidebar a span,
-    .sidebar a span + i
-    {
-        opacity: 0;
-        visibility: hidden;
-    }
-
-    aside .fa-angle-double-left 
-    {
-        rotate: 180deg;
-    }
-}
-
-aside .fa-angle-double-left
-{
-    transition: 
-        rotate 0.2s ease;
 }
 
 /* ================================================= */
