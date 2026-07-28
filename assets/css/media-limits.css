@@ -149,6 +149,7 @@
             {
                 flex-flow: row;
                 gap: 0.2rem;
+                padding-left: 0.6rem;
             }  
             li:last-child
             {
