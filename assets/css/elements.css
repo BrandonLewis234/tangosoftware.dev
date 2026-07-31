@@ -1,3 +1,13 @@
+/* Header */
+
+a.site-header
+{
+    text-decoration: none;
+    color: var(--color-secondary);
+}
+
+/* ================================================= */
+
 /* Navigation */
 .sidebar
 {    

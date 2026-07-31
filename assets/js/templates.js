@@ -10,7 +10,7 @@ class templateHeader extends HTMLElement
         `
             <div>
                 <a href="https://tangosoftware.dev"><img src="../favicon.ico"></img></a>
-                <h1>Tango's Project Repository</h1>
+                <h1><a href="https://tangosoftware.dev" class="site-header">Tango's Project Repository</a></h1>
             </div>
         `
     }
