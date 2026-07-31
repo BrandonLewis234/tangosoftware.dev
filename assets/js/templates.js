@@ -37,6 +37,12 @@ class templateSidebar extends HTMLElement
                         </a>
                     </li>
                     <li>
+                        <a href="../projects" id="projects">
+                            <i class="fa fa-lightbulb"></i>
+                            <span>Projects</span>
+                        </a>
+                    </li>
+                    <li>
                         <a href="../preview" id="preview">
                             <i class="fa fa-magnifying-glass"></i>
                             <span>Preview</span>
@@ -46,12 +52,6 @@ class templateSidebar extends HTMLElement
                         <a href="#" id="documentation">
                             <i class="fa fa-book"></i>
                             <span>Documentation</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" id="Projects">
-                            <i class="fa fa-lightbulb"></i>
-                            <span>Projects</span>
                         </a>
                     </li>
                     <li>

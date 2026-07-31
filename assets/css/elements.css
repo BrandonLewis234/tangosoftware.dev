@@ -219,12 +219,12 @@ aside .fa-angle-double-left
 /* ================================================= */
 
 /* Buttons */
-.button, #theme-toggle, #toggle-sidebar
+.button, button, #theme-toggle, #toggle-sidebar
 {
     font-weight: normal;
 }
 
-.button 
+.button, button
 {
     display: flex;
     background-color: var(--color-sidebar);
@@ -236,7 +236,8 @@ aside .fa-angle-double-left
     text-decoration: none; 
     cursor: pointer;   
 }
-.button:hover
+.button:hover,
+button:hover
 {
     color: var(--color-primary);
     background-color: var(--color-tertiary);
@@ -306,6 +307,37 @@ article.project
             overflow: auto;
         }
     }
+}
+
+/* ================================================= */
+
+/* Filters styling */
+
+.filters 
+{
+    padding-top: 2rem;
+
+    > div
+    {
+        display: flex;
+        margin: 0;
+        padding: 0 0.5rem;
+        gap: 0.5rem;
+    
+        > button:first-child
+        {
+            border-color: var(--color-accent);
+            background-color: var(--color-accent-darker);
+            padding: 0.25rem 0.5rem;
+        }
+    }
+}
+
+button.filter
+{
+    width: fit-content;
+    font-size: 12pt;
+    padding: 0.25rem;
 }
 
 /* ================================================= */
