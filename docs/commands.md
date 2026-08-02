@@ -2,7 +2,7 @@
 
 ## Local Testing
 
-### To test changes using a local server:
+### To test changes locally:
 
 (in public)  
 `node server.js`
