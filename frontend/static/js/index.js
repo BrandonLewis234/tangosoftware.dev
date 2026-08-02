@@ -1,4 +1,6 @@
 import Home from "./views/Home.js";
+import Projects from "./views/Projects.js";
+import Preview from "./views/Preview.js";
 
 const navigateTo = url =>
 {
@@ -10,9 +12,9 @@ const router = async () =>
 {
     const routes = 
     [
-        {path: "/", view: Home}
-        // {path: "/projects", view: () => console.log("Viewing projects")},
-        // {path: "/preview", view: () => console.log("Viewing previews")}
+        {path: "/", view: Home},
+        {path: "/projects", view: Projects},
+        {path: "/preview", view: Preview}
     ];
 
     // Test each route for potential match
@@ -39,7 +41,7 @@ const router = async () =>
 
     document.querySelector("#app").innerHTML = await view.getHTML();
 
-    console.log(match.route.view());
+    //console.log(match.route.view());
 };
 
 window.addEventListener("popstate", router);

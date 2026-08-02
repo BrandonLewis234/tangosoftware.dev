@@ -1,0 +1,113 @@
+import AbstractView from "./AbstractView.js";
+
+export default class extends AbstractView
+{
+    constructor()
+    {
+        super();
+        this.setTitle("Tango Software | Preview");
+    }
+
+    async getHTML()
+    {
+        return `
+            <main>
+                <section class="grid column-container">
+                    <div>
+                        <h1>Message Styles</h1>
+                        <div class="msg" id="info">info example</div>
+                        <div class="msg" id="success">success example</div>
+                        <div class="msg" id="warning">warning example</div>
+                        <div class="msg" id="error">error example</div>
+                    </div>
+                    <div>
+                        <h1>Grid Layout</h1>
+                        <div class="grid column-connected-container">
+                            <div>
+                                <h2>Column 1</h2>
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. 
+                                    In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. 
+                                </p>
+                            </div>
+                            <div>
+                                <h2>Column 2</h2>
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. 
+                                    In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. 
+                                </p>
+                            </div>
+                            <div>
+                                <h2>Column 3</h2>
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. 
+                                    In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. 
+                                </p>
+                            </div>
+                            <div>
+                                <h2>Column 4</h2>
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. 
+                                    In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. 
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <h1>Project Preview</h1>
+                    <div class="grid column-container auto-fit">
+                        <article class="project">
+                            <div class="image-column">
+                                <a class="image" href="#">
+                                    <img src="../images/pic01.jpg">
+                                </a>
+                                <a class="button read-more" href="#">Read more</a>
+                            </div>
+                            <div class="detail-column">
+                                <h2>Project Name</h2>
+                                <p>
+                                    Project details
+                                    Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. 
+                                    In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor.                                                
+                                </p>
+                            </div>
+                        </article>
+                        <article class="project">
+                            <div class="image-column">
+                                <a class="image" href="#">
+                                    <img src="../images/pic02.jpg">
+                                </a>
+                                <a class="button read-more" href="#">Read more</a>
+                            </div>
+                            <div class="detail-column">
+                                <h2>Project Name</h2>
+                                <p>
+                                    Project details
+                                    Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. 
+                                    In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor.                                                
+                                </p>
+                            </div>
+                        </article>
+                        <article class="project">
+                            <div class="image-column">
+                                <a class="image" href="#">
+                                    <img src="../images/pic03.jpg">
+                                </a>
+                                <a class="button read-more" href="#">Read more</a>
+                            </div>
+                            <div class="detail-column">
+                                <h2>Project Name</h2>
+                                <p>
+                                    Project details
+                                    Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. 
+                                    In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor.                                                
+                                </p>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+            </main>
+        `;
+    }
+}

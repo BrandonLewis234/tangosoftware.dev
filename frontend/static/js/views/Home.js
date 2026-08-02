@@ -11,12 +11,6 @@ export default class extends AbstractView
     async getHTML()
     {
         return `
-
-        <div class="grid main-container">
-            <template-header></template-header>
-
-            <template-sidebar data-collapse-sidebar></template-sidebar>
-
             <main>
                 <section>
                     <h1>Welcome!</h1>
@@ -71,8 +65,12 @@ export default class extends AbstractView
                 </section>
             </main>
 
-            <template-footer></template-footer>
-        </div>
+            <script> 
+                $(function(){    
+                    let element = document.getElementById('projects');
+                    element.classList.add("active-page");
+                });
+            </script>
         `;
     }
 }

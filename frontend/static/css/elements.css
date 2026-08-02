@@ -1,0 +1,404 @@
+/* Header */
+
+a.site-header
+{
+    text-decoration: none;
+    color: var(--color-secondary);
+}
+
+/* ================================================= */
+
+/* Navigation */
+.sidebar
+{    
+    grid-column: span 1;
+    background: var(--color-sidebar);
+    width: var(--sb-width);
+    padding: 0.2rem 1.3rem 0rem 0rem;
+    height: 95vh;
+    position: sticky;
+    align-self: start;
+    top: 3.05rem;
+    text-wrap: nowrap;
+
+    a
+    {
+        display: flex;
+        align-items: center;
+        gap: 0.7rem;
+        padding: 0.7rem;
+        margin-right: 0.7rem;
+        border-radius: 0.5rem;
+        font-size: 16pt;
+        text-decoration: none;
+        color: var(--color-accent);
+    }
+
+    a.active-page,
+    a:hover,
+    a:focus-visible 
+    {
+        color: var(--color-sidebar);
+        background-color: var(--color-accent);
+    }
+
+    ul 
+    {
+        height: 100%;
+        cursor: pointer;
+        list-style-type: none;
+        display: flex;
+        flex-flow: column;
+        gap: 0.25rem;
+    }
+
+    /* Seperate out the first child to act as a collapse icon */
+    ul:not(.sub-menu) > li:first-child
+    {
+        margin-bottom: 3rem;
+    }
+
+    /* Seperate out the last child to act as a dark mode toggle */
+    ul:not(.sub-menu) > li:last-child
+    {
+        margin-top: auto;
+        padding-bottom: 2rem;
+    }
+
+    /* Sidebar dropdowns */
+    .sub-menu 
+    {
+        display: grid;
+        grid-template-rows: 0fr;
+        transition: 0.3s ease;
+        padding-left: 2.4rem;
+
+        > div 
+        {
+            overflow: hidden;
+        }
+        a
+        {
+            font-weight: normal;
+        }
+    }
+
+    .sub-menu.show-submenu
+    {
+        grid-template-rows: 1fr;
+    }
+}
+
+/* Update elements when sidebar is collapsed */
+:not(body.sb-collapsed) 
+{
+    .sidebar a span,
+    .sidebar a span + i
+    {
+        flex-grow: 1;
+        opacity: 1;
+        visibility: visible;
+        transition:
+            rotate 0.2s ease,
+            opacity 0.2s ease,
+            visibility 0.2s ease;
+    }
+}
+
+body.sb-collapsed 
+{    
+    --sb-width: 6rem;
+    --sb-adjustment: var(--sb-min-adjustment);
+
+    .sidebar a span,
+    .sidebar a span + i
+    {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    aside .fa-angle-double-left 
+    {
+        rotate: 180deg;
+    }
+}
+
+aside .fa-angle-double-left
+{
+    transition: 
+        rotate 0.2s ease;
+}
+
+.rotate
+{
+    rotate: 90deg;
+}
+
+/* ================================================= */
+
+/* tooltips */
+.tooltip .tooltip-left
+{
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted var(--color-tooltip);
+}
+
+.tooltip .tooltip-text, 
+.tooltip-left .tooltip-text 
+{
+    width: 120px;
+    background-color: var(--background-tooltip);
+    color: var(--color-tooltip);
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip .tooltip-text
+{
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px;
+}
+
+.tooltip-left .tooltip-text
+{
+    right: 2.25em;
+    margin-top: -0.25em;
+}
+
+.tooltip .tooltip-text::after,
+.tooltip-left .tooltip-text::after 
+{
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+}
+
+.tooltip .tooltip-text::after
+{
+    border-width: 5px;
+    border-style: solid;
+    border-color: var(--background-tooltip) transparent transparent transparent;
+}
+
+.tooltip-left .tooltip-text::after
+{
+    margin-left: 3.7em;
+    top: 0.5em;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent transparent var(--background-tooltip);
+}
+
+.tooltip:hover .tooltip-text,
+.tooltip-left:hover .tooltip-text 
+{
+    opacity: 1;
+    transition-delay: 1.5s;
+}
+
+/* ================================================= */
+
+/* scroll to top */
+#scroll-to-top
+{    
+    position: fixed; 
+    opacity: 0;
+
+    background-color: var(--color-tertiary);
+    border: 0.5em solid var(--color-tertiary);
+    border-radius: 0.25em;
+    color: var(--color-primary);
+    right: -5em;
+    top: 90%;
+
+    transition: 
+        visibility 0.3s,
+        opacity 0.6s ease,
+        right 0.5s ease-out;
+
+}
+
+/* ================================================= */
+
+/* Buttons */
+.button, button, #theme-toggle, #toggle-sidebar
+{
+    font-weight: normal;
+}
+
+.button, button
+{
+    display: flex;
+    background-color: var(--color-sidebar);
+    color: var(--color-secondary);
+    border: 1px solid var(--color-tertiary);
+    border-radius: 0.5em;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none; 
+    cursor: pointer;   
+}
+.button:hover,
+button:hover
+{
+    color: var(--color-primary);
+    background-color: var(--color-tertiary);
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+/* ================================================= */
+
+/* Project Preview */
+
+article.project
+{
+    display: flex;
+
+    border: 1px solid var(--color-tertiary);
+    border-radius: 1em;
+    margin: 20px 10px;
+    padding: 1em 1em 1em 0;
+
+    > div.image-column
+    {
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+
+        /* Image preview */
+        > a.image
+        {            
+            overflow: hidden;
+            margin: 0.5em;
+            border: 0;
+
+            > img
+            {
+                width: 10em;
+                padding: 0.5em;
+                transition: transform 0.2s ease;
+            }
+        }
+
+        /* Read more button */
+        > a.button.read-more
+        {          
+            width: 8em;
+            height: 2.5em;
+        }
+    }
+
+    > div.detail-column 
+    {
+        display: flex;
+        flex-flow: column;
+
+        /* Project title */
+        > h2
+        {
+            padding-top: 0.5em;
+            margin: 0;
+        }
+        /* Project summary */
+        > p 
+        {
+            background-color: var(--color-sidebar);
+            border-radius: 0.25em;
+            padding: 0.5em;
+            max-height: 6.5rem;
+            overflow: auto;
+        }
+    }
+}
+
+/* ================================================= */
+
+/* Filters styling */
+
+.filters 
+{
+    padding-top: 2rem;
+
+    > div
+    {
+        display: flex;
+        margin: 0;
+        padding: 0 0.5rem;
+        gap: 0.5rem;
+    
+        > button:first-child
+        {
+            border-color: var(--color-accent);
+            background-color: var(--color-accent-darker);
+            padding: 0.25rem 0.5rem;
+        }
+    }
+}
+
+button.filter
+{
+    width: fit-content;
+    font-size: 12pt;
+    padding: 0.25rem;
+}
+
+/* ================================================= */
+
+/* Message styling */
+.msg:before 
+{
+    font-family: 'Font Awesome 7 Free';
+}
+
+.msg
+{
+    width: fit-content;
+    height: auto;
+    margin: 0 auto 0.5rem 0;
+    font: 800 1.5rem/1em var(--ff);
+    display: flex;
+    flex-flow: row;
+    padding: 1rem;
+    gap: 1rem;
+
+    border-radius: 1rem;
+}
+
+/* Message types */
+
+#info:before    {content: '\f05a';}
+#success:before {content: '\f00c';}
+#warning:before {content: '\f071';}
+#error:before   {content: '\f057';}
+
+#info
+{
+    color: var(--color-info);
+    background: var(--background-info);
+}
+
+#success 
+{
+    color: var(--color-success);
+    background: var(--background-success);
+}
+
+#warning 
+{
+    color: var(--color-warning);
+    background: var(--background-warning);
+}
+
+#error 
+{
+    color: var(--color-error);
+    background: var(--background-error);
+}
