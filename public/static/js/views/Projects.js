@@ -52,6 +52,54 @@ export default class extends AbstractView
                         <article class="project">
                             <div class="image-column">
                                 <a class="image" href="#">
+                                    <img src="/images/pic02.jpg">
+                                </a>
+                                <a class="button read-more" href="#">Read more</a>
+                            </div>
+                            <div class="detail-column">
+                                <h2>Project Name</h2>
+                                <p>
+                                    Project details
+                                    Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. 
+                                    In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor.                                                
+                                </p>
+                            </div>
+                        </article>
+                        <article class="project">
+                            <div class="image-column">
+                                <a class="image" href="#">
+                                    <img src="/images/pic03.jpg">
+                                </a>
+                                <a class="button read-more" href="#">Read more</a>
+                            </div>
+                            <div class="detail-column">
+                                <h2>Project Name</h2>
+                                <p>
+                                    Project details
+                                    Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. 
+                                    In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor.                                                
+                                </p>
+                            </div>
+                        </article>
+                        <article class="project">
+                            <div class="image-column">
+                                <a class="image" href="#">
+                                    <img src="/images/pic04.jpg">
+                                </a>
+                                <a class="button read-more" href="#">Read more</a>
+                            </div>
+                            <div class="detail-column">
+                                <h2>Project Name</h2>
+                                <p>
+                                    Project details
+                                    Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. 
+                                    In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor.                                                
+                                </p>
+                            </div>
+                        </article>
+                        <article class="project">
+                            <div class="image-column">
+                                <a class="image" href="#">
                                     <img src="../images/pic02.jpg">
                                 </a>
                                 <a class="button read-more" href="#">Read more</a>
@@ -68,55 +116,7 @@ export default class extends AbstractView
                         <article class="project">
                             <div class="image-column">
                                 <a class="image" href="#">
-                                    <img src="../images/pic03.jpg">
-                                </a>
-                                <a class="button read-more" href="#">Read more</a>
-                            </div>
-                            <div class="detail-column">
-                                <h2>Project Name</h2>
-                                <p>
-                                    Project details
-                                    Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. 
-                                    In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor.                                                
-                                </p>
-                            </div>
-                        </article>
-                        <article class="project">
-                            <div class="image-column">
-                                <a class="image" href="#">
-                                    <img src="frontend/images/pic01.jpg">
-                                </a>
-                                <a class="button read-more" href="#">Read more</a>
-                            </div>
-                            <div class="detail-column">
-                                <h2>Project Name</h2>
-                                <p>
-                                    Project details
-                                    Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. 
-                                    In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor.                                                
-                                </p>
-                            </div>
-                        </article>
-                        <article class="project">
-                            <div class="image-column">
-                                <a class="image" href="#">
-                                    <img src="../images/pic02.jpg">
-                                </a>
-                                <a class="button read-more" href="#">Read more</a>
-                            </div>
-                            <div class="detail-column">
-                                <h2>Project Name</h2>
-                                <p>
-                                    Project details
-                                    Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. 
-                                    In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor.                                                
-                                </p>
-                            </div>
-                        </article>
-                        <article class="project">
-                            <div class="image-column">
-                                <a class="image" href="#">
-                                    <img src="../images/pic03.jpg">
+                                    <img src="/images/pic05.jpg">
                                 </a>
                                 <a class="button read-more" href="#">Read more</a>
                             </div>
