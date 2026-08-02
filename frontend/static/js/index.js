@@ -71,6 +71,12 @@ document.addEventListener("DOMContentLoaded", () =>
             try
             {
                 navigateTo(target.href);
+                
+                let previous_page = document.getElementsByClassName('active-page');
+                previous_page[0].classList.remove("active-page");
+
+                let element = document.getElementById(target.id);
+                element.classList.add("active-page");
             }
             catch (error) 
             {
