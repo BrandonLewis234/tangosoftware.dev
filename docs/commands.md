@@ -4,7 +4,9 @@
 
 ### To test changes locally:
 
-(in public)  
+(in public)
+
+uncomment the last line of `server.js`  
 `node server.js`
 
 ## Deployment
