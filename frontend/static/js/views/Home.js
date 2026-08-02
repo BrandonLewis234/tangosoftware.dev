@@ -64,13 +64,6 @@ export default class extends AbstractView
                     </p>                
                 </section>
             </main>
-
-            <script> 
-                $(function(){    
-                    let element = document.getElementById('projects');
-                    element.classList.add("active-page");
-                });
-            </script>
         `;
     }
 }

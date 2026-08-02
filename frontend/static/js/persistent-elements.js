@@ -22,7 +22,7 @@ window.addEventListener("load", function ()
 // Sidebar
 // =============
 
-SMALL_WIDTH = 600;
+SMALL_WIDTH = 630;
 LARGE_WIDTH = 1200;
 
 function screenIsSmall()

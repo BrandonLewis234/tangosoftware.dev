@@ -36,7 +36,7 @@ export default class extends AbstractView
                         <article class="project">
                             <div class="image-column">
                                 <a class="image" href="#">
-                                    <img src="../images/pic01.jpg">
+                                    <img src="../../../images/pic01.jpg">
                                 </a>
                                 <a class="button read-more" href="#">Read more</a>
                             </div>

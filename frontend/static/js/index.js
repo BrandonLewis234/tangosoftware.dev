@@ -41,7 +41,13 @@ const router = async () =>
 
     document.querySelector("#app").innerHTML = await view.getHTML();
 
-    //console.log(match.route.view());
+    // Set active page
+    let page_id = match.route.path.substring(1);
+    if (page_id == "") { page_id = "home"}
+
+    let element = document.getElementById(page_id);
+    
+    element.classList.add("active-page");
 };
 
 window.addEventListener("popstate", router);
@@ -72,15 +78,17 @@ document.addEventListener("DOMContentLoaded", () =>
             {
                 navigateTo(target.href);
                 
-                let previous_page = document.getElementsByClassName('active-page');
-                previous_page[0].classList.remove("active-page");
-
-                let element = document.getElementById(target.id);
-                element.classList.add("active-page");
+                // Remove old active page and ensure there is only one
+                let active_pages = document.getElementsByClassName("active-page");
+                
+                for (let page of active_pages) 
+                {
+                    page.classList.remove("active-page");
+                }
             }
             catch (error) 
             {
-                //console.log("target has no href");
+                console.log(error);
             }
         }
         
