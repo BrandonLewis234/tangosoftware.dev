@@ -46,8 +46,17 @@ const router = async () =>
     if (page_id == "") { page_id = "home"}
 
     let element = document.getElementById(page_id);
+                
+    // Remove old active page and ensure there is only one
+    let active_pages = document.getElementsByClassName("active-page");
+    
+    for (let page of active_pages) 
+    {
+        page.classList.remove("active-page");
+    }
     
     element.classList.add("active-page");
+
 };
 
 window.addEventListener("popstate", router);
@@ -77,14 +86,6 @@ document.addEventListener("DOMContentLoaded", () =>
             try
             {
                 navigateTo(target.href);
-                
-                // Remove old active page and ensure there is only one
-                let active_pages = document.getElementsByClassName("active-page");
-                
-                for (let page of active_pages) 
-                {
-                    page.classList.remove("active-page");
-                }
             }
             catch (error) 
             {
