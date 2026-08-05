@@ -12,4 +12,4 @@ app.use((request, response) =>
     response.sendFile(path.resolve(__dirname, "index.html"));
 })
 
-//app.listen(process.env.PORT || 5276, () => {console.log("Server running...")});
+app.listen(process.env.PORT || 5276, () => {console.log("Server running...")});
