@@ -178,6 +178,13 @@
             display: block;
         }  
     }
+
+    .main-image
+    {
+        width: 450px;
+        margin: 0 0 1rem 0;
+        display: flex;
+    }
 }
 
 /* Medium Size Devices */

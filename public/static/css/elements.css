@@ -256,6 +256,33 @@ button:hover
 
 /* ================================================= */
 
+/* Home Page */
+
+.main-image
+{
+    display: flex;
+    align-self: center;
+    justify-self: center;
+    width: 500px;
+    height: auto;
+    margin: 1rem 1rem 1rem 0;
+    border: 1px solid var(--color-accent);
+    border-radius: 0.5em;
+}
+
+.home-intro
+{
+    display: flex;
+    flex-flow: column;
+
+    :last-child 
+    {
+        margin-top: auto;
+    }
+}
+
+/* ================================================= */
+
 /* Project Preview */
 
 article.project

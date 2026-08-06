@@ -61,7 +61,7 @@ html
 }
 
 /* Set transition times for most of the site */
-body,
+main,
 template-header,
 template-footer,
 .sidebar
@@ -211,4 +211,9 @@ a
 h1 
 {
     font: var(--h1);
+}
+
+hr
+{
+    color: var(--color-tertiary);
 }
