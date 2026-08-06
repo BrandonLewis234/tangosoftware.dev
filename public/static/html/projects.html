@@ -10,21 +10,23 @@
     </section>
     <section class="no-border">
         <div class="filters">
-            <input type="radio" id="all" name="project_filter" value="All" checked></input>
+            <input type="radio" id="all" name="project_filter" value="All" checked onclick="filterItems()"></input>
             <label for="all">All</label>
-            <input type="radio" id="web-development" name="project_filter" value="Web Development"></input>
-            <label for="web-development">Web Development</label>
-            <input type="radio" id="game-development" name="project_filter" value="Game Development"></input>
-            <label for="game-development">Game Development</label> 
-            <input type="radio" id="3d-modeling" name="project_filter" value="3D Modeling"></input>
-            <label for="3d-modeling">3D Modeling</label>             
-            <input type="radio" id="mod" name="project_filter" value="Mod"></input>
+            <input type="radio" id="web" name="project_filter" value="Web" onclick="filterItems()"></input>
+            <label for="web">Web</label>
+            <input type="radio" id="game" name="project_filter" value="Game" onclick="filterItems()"></input>
+            <label for="game">Game</label> 
+            <input type="radio" id="software" name="project_filter" value="Software" onclick="filterItems()"></input>
+            <label for="software">Software</label>             
+            <input type="radio" id="modeling" name="project_filter" value="Modeling" onclick="filterItems()"></input>
+            <label for="modeling">3D Modeling</label>             
+            <input type="radio" id="mod" name="project_filter" value="Mod" onclick="filterItems()"></input>
             <label for="mod">Mod</label> 
         </div>
     </section>
     <section>
         <div class="grid column-container auto-fit">
-            <article class="project">
+            <article class="project Game Modeling">
                 <div class="image-column">
                     <a class="image" href="#">
                         <img src="/images/pic01.jpg">
@@ -40,7 +42,7 @@
                     </p>
                 </div>
             </article>
-            <article class="project">
+            <article class="project Web">
                 <div class="image-column">
                     <a class="image" href="#">
                         <img src="/images/pic02.jpg">
@@ -56,7 +58,7 @@
                     </p>
                 </div>
             </article>
-            <article class="project">
+            <article class="project Modeling">
                 <div class="image-column">
                     <a class="image" href="#">
                         <img src="/images/pic03.jpg">
@@ -72,7 +74,7 @@
                     </p>
                 </div>
             </article>
-            <article class="project">
+            <article class="project Mod">
                 <div class="image-column">
                     <a class="image" href="#">
                         <img src="/images/pic04.jpg">
@@ -88,7 +90,7 @@
                     </p>
                 </div>
             </article>
-            <article class="project">
+            <article class="project Software">
                 <div class="image-column">
                     <a class="image" href="#">
                         <img src="../images/pic02.jpg">
@@ -104,7 +106,7 @@
                     </p>
                 </div>
             </article>
-            <article class="project">
+            <article class="project no-filter">
                 <div class="image-column">
                     <a class="image" href="#">
                         <img src="/images/pic05.jpg">
