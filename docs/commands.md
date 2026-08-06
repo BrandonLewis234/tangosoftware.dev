@@ -19,4 +19,4 @@ uncomment the last line of `server.js`
 ### To deploy changes to live:
 
 (in tangosoftware.dev)  
-`wrangler pages deploy public --branch single-page-application`
+`wrangler pages deploy public --branch main`
