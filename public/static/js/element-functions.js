@@ -1,4 +1,26 @@
 // =============
+// Constants
+// =============
+
+SMALL_WIDTH = 630;
+LARGE_WIDTH = 1200;
+
+function screenIsSmall()
+{
+    return window.innerWidth <= SMALL_WIDTH;
+}
+
+function screenIsMedium()
+{
+    return window.innerWidth > SMALL_WIDTH < LARGE_WIDTH
+}
+
+function screenIsLarge()
+{
+    return window.innerWidth >= LARGE_WIDTH;
+}
+
+// =============
 // Project Filter
 // =============
 function filterItems() 
