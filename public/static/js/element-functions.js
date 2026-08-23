@@ -17,3 +17,71 @@ function filterItems()
         }
     });
 } 
+
+// =============
+// Sidebar
+// =============
+function toggleSidebar(e)
+{
+    const element = document.body;
+
+    element.classList.toggle('sb-collapsed');
+    const isExpanded = element.classList.contains("sb-collapsed");
+    localStorage.setItem("sidebarState", isExpanded ? "sb-collapsed" : "");
+
+    if(isExpanded)
+    {
+        closeAllSubMenus();
+    }
+}
+
+const expandSidebar = document.querySelector('[data-expand-sidebar]');
+
+expandSidebar.addEventListener('click', function(e)
+{
+    e.preventDefault();
+    document.body.classList.toggle('sb-expanded');
+});
+
+// =============
+// Theme Toggle
+// =============
+
+// Save theme in local web storage to keep a persistent style choice on page reload.
+function themeToggle() 
+{
+    let element = document.body;
+    element.classList.toggle("light-mode");
+
+    const theme = element.classList.contains("light-mode") ? "light-mode" : "";
+    localStorage.setItem("theme", theme);
+}
+
+// =============
+// Sub-menu Toggle
+// =============
+function toggleSubMenu(element)
+{
+    
+    element.nextElementSibling.classList.toggle("show-submenu");
+    element.querySelector('i:last-child').classList.toggle('rotate');
+
+    if (screenIsSmall())
+    {
+        return;
+    }
+    
+    if(document.body.classList.contains("sb-collapsed"))
+    {
+        toggleSidebar();
+    }
+}
+
+function closeAllSubMenus()
+{
+    element = document.body;
+    Array.from(document.getElementsByClassName("show-submenu")).forEach(element => {
+        element.classList.remove("show-submenu");
+        element.previousElementSibling.querySelector('i:last-child').classList.toggle('rotate');
+    });
+}
