@@ -27,17 +27,20 @@ function filterItems()
 {
     // Get the selected radio button value
     var selectedValue = document.querySelector('input[name="project_filter"]:checked').value;
+    selectedValue = "filter" + selectedValue;
 
     // Get all list items
-    var items = document.querySelectorAll('.no-filter, .Web, .Game, .Software, .Modeling, .Mod');
+    var items = document.querySelectorAll('.filterNone, .filterWeb, .filterGame, .filterSoftware, .filterModeling, .filterMod');
 
     // Loop through each item and show/hide based on the selected radio button
     items.forEach(function(item) {
-        item.style.display = "none";
-        if (selectedValue === 'All' || item.classList.contains(selectedValue)) {
-            item.style.display = "flex";
+        parent = item.closest("article") // Find closest ancestor with article tag
+
+        parent.style.display = "none";
+        if (selectedValue === 'filterAll' || item.classList.contains(selectedValue)) {
+            parent.style.display = "flex";
         }
-    });
+    }); 
 } 
 
 // =============

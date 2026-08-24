@@ -48,12 +48,14 @@ class templateSidebar extends HTMLElement
                             <span>Preview</span>
                         </a>
                     </li>
+                    <!-- use documentation subdomain later
                     <li>
                         <a href="#" id="documentation" class="nav__link" data-link>
                             <i class="fa fa-book"></i>
                             <span>Documentation</span>
                         </a>
-                    </li>
+                    </li> 
+                    -->
                     <li>
                         <a href="#" onclick="toggleSubMenu(this)" id="settings">
                             <i class="fa fa-cog"></i>
